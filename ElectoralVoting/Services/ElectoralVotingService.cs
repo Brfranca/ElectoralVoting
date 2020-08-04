@@ -54,9 +54,9 @@ namespace ElectoralVoting.Services
                 CandidateDatas[i].PercVote = (double)(CandidateDatas[i].Vote * 100) / totalVotes;
         }
 
-        public int CandidateWithMoreVote()
+        public int DefineNameCurrentList(string name)
         {
-            return CandidateDatas.FindIndex(x => x.PercVote == CandidateDatas.Max(y => y.PercVote));
+            return CandidateDatas.FindIndex(x => x.Name == name);
         }
     }
 }

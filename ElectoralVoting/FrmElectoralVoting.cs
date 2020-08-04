@@ -66,7 +66,7 @@ namespace ElectoralVoting
             {
                 dtgResult.Rows.Add(item.Name, item.Vote, item.PercVote.ToString("F1"));
             }
-            _screenService.DefineIndex(_electoralService.CandidateWithMoreVote());
+            _screenService.DefineIndex(0);
             RefreshComponentsTabResult();
         }
 
@@ -90,7 +90,11 @@ namespace ElectoralVoting
 
         private void dtgResult_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            _screenService.DefineIndex(e.RowIndex);
+            if (e.RowIndex >= 0)
+            {
+                var name = (string)dtgResult.Rows[e.RowIndex].Cells[0].Value;
+                _screenService.DefineIndex(_electoralService.DefineNameCurrentList(name));
+            }
             RefreshComponentsTabResult();
         }
 
@@ -115,6 +119,7 @@ namespace ElectoralVoting
             lblName.Text = _screenService.CandidateName;
             lblNumber.Text = _screenService.CandidateNumber;
             picPhotoVt.ImageLocation = _screenService.CandidateImage;
+            cboCandidates.SelectedIndex = _screenService.CandidateIndex;
         }
 
         private void RefreshComponentsTabResult()

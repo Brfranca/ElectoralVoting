@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ElectoralVoting.Validation
 {
@@ -10,10 +11,9 @@ namespace ElectoralVoting.Validation
         public string RegisterValidation(string name, string number, List<CandidateData> candidateDatas)
         {
             StringBuilder errors = new StringBuilder();
-
             if (string.IsNullOrWhiteSpace(name))
                 errors.AppendLine("Escreva o nome do candidato.");
-            else if (name.Any(char.IsNumber))
+            else if (Regex.IsMatch(name.ToLower(), @"[^a-z çãáéíêõâú]+"))
                 errors.AppendLine("Corrija o nome do candidato, é permitido apenas letras.");
             if (candidateDatas.Any(x => x.Name.ToLower() == name.ToLower()))
                 errors.AppendLine("Esse nome já foi cadastrado, escolha outro.");
