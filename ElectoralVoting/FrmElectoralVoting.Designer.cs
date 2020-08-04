@@ -58,15 +58,15 @@
             this.picPhotoVt = new System.Windows.Forms.PictureBox();
             this.tabResult = new System.Windows.Forms.TabPage();
             this.dtgResult = new System.Windows.Forms.DataGridView();
-            this.Candidate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Votes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.percVote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblPercVote = new System.Windows.Forms.Label();
             this.lblNumberResult = new System.Windows.Forms.Label();
             this.lblNameResult = new System.Windows.Forms.Label();
             this.picPhotoResult = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.openFileImage = new System.Windows.Forms.OpenFileDialog();
+            this.Candidate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Votes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.percVote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPhotoRegister)).BeginInit();
@@ -391,6 +391,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgResult.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgResult.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
@@ -399,27 +400,6 @@
             this.dtgResult.Size = new System.Drawing.Size(394, 178);
             this.dtgResult.TabIndex = 13;
             this.dtgResult.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgResult_CellMouseClick);
-            // 
-            // Candidate
-            // 
-            this.Candidate.HeaderText = "Candidato";
-            this.Candidate.Name = "Candidate";
-            this.Candidate.ReadOnly = true;
-            this.Candidate.Width = 220;
-            // 
-            // Votes
-            // 
-            this.Votes.HeaderText = "Votos";
-            this.Votes.Name = "Votes";
-            this.Votes.ReadOnly = true;
-            this.Votes.Width = 50;
-            // 
-            // percVote
-            // 
-            this.percVote.HeaderText = "%Votos";
-            this.percVote.Name = "percVote";
-            this.percVote.ReadOnly = true;
-            this.percVote.Width = 81;
             // 
             // lblPercVote
             // 
@@ -474,6 +454,27 @@
             // openFileImage
             // 
             this.openFileImage.FileName = "openFileImage";
+            // 
+            // Candidate
+            // 
+            this.Candidate.HeaderText = "Candidato";
+            this.Candidate.Name = "Candidate";
+            this.Candidate.ReadOnly = true;
+            this.Candidate.Width = 250;
+            // 
+            // Votes
+            // 
+            this.Votes.HeaderText = "Votos";
+            this.Votes.Name = "Votes";
+            this.Votes.ReadOnly = true;
+            this.Votes.Width = 60;
+            // 
+            // percVote
+            // 
+            this.percVote.HeaderText = "%Votos";
+            this.percVote.Name = "percVote";
+            this.percVote.ReadOnly = true;
+            this.percVote.Width = 81;
             // 
             // FrmElectoralVoting
             // 
@@ -532,10 +533,10 @@
         private System.Windows.Forms.PictureBox picPhotoResult;
         private System.Windows.Forms.DataGridView dtgResult;
         private System.Windows.Forms.OpenFileDialog openFileImage;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Candidate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Votes;
         private System.Windows.Forms.DataGridViewTextBoxColumn percVote;
-        private System.Windows.Forms.Label label5;
     }
 }
 
